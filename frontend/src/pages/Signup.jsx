@@ -12,7 +12,7 @@ export default function Signup({ onSwitch, onLogin }) {
 
   const handleSubmit = async () => {
     if (!form.username || !form.email || !form.password)
-      return setError('Teeno fields fill karo');
+      return setError('fill these fields');
     if (form.password.length < 6)
       return setError('Password kam se kam 6 characters ka hona chahiye');
     setLoading(true);
