@@ -1,0 +1,2 @@
+- **Frontend:** https://social-app-phi-blond.vercel.app
+- **Backend:** https://social-app-backend-xyqo.onrender.com
