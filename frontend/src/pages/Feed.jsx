@@ -11,34 +11,31 @@ export default function Feed({ onLogout }) {
   const [posts, setPosts]     = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter]   = useState('All Post');
-  const [dark, setDark]       = useState(false);
+  
   const [search, setSearch]   = useState('');
   const [toast, setToast]     = useState('');
   const username = localStorage.getItem('username');
 
-  // Toast helper — 2.5 sec mein gayab ho jaata hai
+  
   const showToast = (msg) => {
     setToast(msg);
     setTimeout(() => setToast(''), 2500);
   };
 
-  // Backend se posts laao
+ 
   const fetchPosts = useCallback(async () => {
     try {
       const res = await axios.get(`${API_URL}/api/posts`);
       setPosts(res.data);
     } catch {
-      showToast('Posts load nahi hue, dobara try karo');
+      showToast('Posts not loaded,  try again');
     }
     setLoading(false);
   }, []);
 
   useEffect(() => { fetchPosts(); }, [fetchPosts]);
 
-  // Dark mode body pe toggle
-  useEffect(() => {
-     document.body.classList.toggle('dark', dark);
-  }, [dark]);
+
 
   // Filter + Search logic
   const getFilteredPosts = () => {

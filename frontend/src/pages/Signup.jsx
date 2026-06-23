@@ -79,7 +79,7 @@ export default function Signup({ onSwitch, onLogin }) {
 
         <div className="auth-switch">
           Already have Account?{' '}
-          <a onClick={onSwitch}> Please Login</a>
+          <button onClick={onSwitch}  style={{ background:'none', border:'none', color:'#1877f2', fontWeight:600, cursor:'pointer', fontSize:14 }} > Please Login</button>
         </div>
 
       </div>

@@ -62,9 +62,9 @@ export default function Login({ onSwitch, onLogin }) {
           {loading ? 'Logging in...' : 'Login'}
         </button>
 
-        <div className="auth-switch">
+        <div className="auth-switch"  style={{ background:'none', border:'none', color:'#1877f2', fontWeight:600, cursor:'pointer', fontSize:14 }}>
           Don't have account?{' '}
-          <a onClick={onSwitch}>Sign up </a>
+          <button onClick={onSwitch}>Sign up </button>
         </div>
 
       </div>
